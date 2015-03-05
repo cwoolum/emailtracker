@@ -66,6 +66,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Angular\app.js" />
+    <Content Include="Angular\Controllers\readController.js" />
+    <Content Include="Angular\Controllers\writeController.js" />
     <Content Include="AppCompose\App.css" />
     <Content Include="AppCompose\App.js" />
     <Content Include="AppCompose\Home\Home.css" />

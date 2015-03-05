@@ -1,0 +1,6 @@
+C:\Users\cwoolum\Documents\GitHub\emailtracker\EmailTrackerWeb\bin\EmailTrackerWeb.dll.config
+C:\Users\cwoolum\Documents\GitHub\emailtracker\EmailTrackerWeb\bin\EmailTrackerWeb.dll
+C:\Users\cwoolum\Documents\GitHub\emailtracker\EmailTrackerWeb\bin\EmailTrackerWeb.pdb
+C:\Users\cwoolum\Documents\GitHub\emailtracker\EmailTrackerWeb\obj\Debug\EmailTrackerWeb.csprojResolveAssemblyReference.cache
+C:\Users\cwoolum\Documents\GitHub\emailtracker\EmailTrackerWeb\obj\Debug\EmailTrackerWeb.dll
+C:\Users\cwoolum\Documents\GitHub\emailtracker\EmailTrackerWeb\obj\Debug\EmailTrackerWeb.pdb
