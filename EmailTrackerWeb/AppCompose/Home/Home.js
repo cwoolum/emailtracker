@@ -5,16 +5,16 @@
 
 
     // The initialize function must be run each time a new page is loaded
-    Office.initialize = function (reason) {
-        $(document).ready(function () {
-            app.initialize();
+    //Office.initialize = function (reason) {
+    //    $(document).ready(function () {
+    //        app.initialize();
 
-            $('#set-subject').click(setSubject);
-            $('#get-subject').click(getSubject);
-            $('#set-body').click(setBody);
-            $('#add-to-recipients').click(addToRecipients);
-        });
-    };
+    //        $('#set-subject').click(setSubject);
+    //        $('#get-subject').click(getSubject);
+    //        $('#set-body').click(setBody);
+    //        $('#add-to-recipients').click(addToRecipients);
+    //    });
+    //};
 
     function setBody() {
         var emailIdentifier=guid();
