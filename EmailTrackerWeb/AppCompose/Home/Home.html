@@ -37,14 +37,15 @@
 <body id="container">
     <div id="content-header">
         <div class="padding">
-            <h1>Welcome to Here</h1>
+            <h1>Welcome</h1>
         </div>
     </div>
     <div id="content-main">
         <div ng-controller="writeController">
-           
-            <button ng-click="addImage()">Add tracking image</button>
-        </div>
+            <div class="padding">
+                <button ng-click="addImage()">Add tracking</button>
+                <span>Tracking: <span ng-bind="isTracking"></span></span>
+            </div>
     </div>
 </body>
 </html>
