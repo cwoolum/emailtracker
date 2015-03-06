@@ -32,6 +32,10 @@
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+    <Rule xsi:type="ItemHasRegularExpressionMatch"
+          PropertyName="BodyAsHTML"
+          RegExName="KeenId"
+          RegExValue="data-keen-id=.([0-9-]+)" />
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
 </OfficeApp>

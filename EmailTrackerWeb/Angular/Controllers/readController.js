@@ -1,4 +1,4 @@
-﻿angular.module('emailTracker').controller('readController', ['$scope', function ($scope) {
+﻿angular.module('emailTracker').controller('readController', ['$q', '$scope', function ($q, $scope) {
 
 
     function hasOpened(email_id, callback) {
@@ -32,11 +32,27 @@
         });
     };
 
-    hasOpened("cc28ea07-b12c-694a-aa8a-20435db5caa6", function (result) {
-        $scope.result = result ? "opened" : "not opened";
-        console.log(result);
+    function getKeenIdFromEmail() {
+        var deferred = $q.defer();
 
+        try {
+            var currentEmail = Office.cast.item.toItemRead(Office.context.mailbox.item);
+
+            deferred.resolve(currentEmail.getRegExMatches().KeenId);
+        } catch (error) {
+            deferred.reject(error);
+        }
+
+        return deferred.promise;
+    }
+
+    getKeenIdFromEmail().then(function(keenId) {
+        hasOpened(keenId, function (result) {
+            $scope.result = result ? "opened" : "not opened";
+            console.log(result);
+        });
     });
+
 
 
 
