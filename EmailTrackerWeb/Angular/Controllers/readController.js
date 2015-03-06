@@ -1,6 +1,12 @@
-﻿angular.module('emailTracker').controller('readController', ['$scope', function ($scope) {
+﻿angular.module('emailTracker').controller('readController', ['$q', '$scope', function ($q, $scope) {
 
-    var body = Office.context.mailbox.item.body;
+    function getParameterByName(name, string) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(string);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
 
     function hasOpened(email_id, callback) {
         var keen_client = new Keen({
@@ -33,11 +39,29 @@
         });
     };
 
-    hasOpened("cc28ea07-b12c-694a-aa8a-20435db5caa6", function (result) {
-        $scope.result = result ? "opened" : "not opened";
-        console.log(result);
+    function getKeenIdFromEmail() {
+        var deferred = $q.defer();
 
+        try {
+            var currentEmail = Office.cast.item.toItemRead(Office.context.mailbox.item);
+
+            deferred.resolve(currentEmail.getRegExMatches().KeenId[0]);
+        } catch (error) {
+            deferred.reject(error);
+        }
+
+        return deferred.promise;
+    }
+
+    getKeenIdFromEmail().then(function (keenId) {
+        var url = $(keenId).attr('src');
+        var obj = JSON.parse(window.atob(getParameterByName('data', url)));
+        hasOpened(obj.email_id, function (result) {
+            $scope.result = result ? "opened" : "not opened";
+            console.log(result);
+        });
     });
+
 
 
 

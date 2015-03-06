@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title></title>
+    <script src="../../Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+
+    <link href="../../Content/Office.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js" type="text/javascript"></script>
+    <script src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js" type="text/javascript"></script>
+
+    <script src="https://d26b395fwzu5fz.cloudfront.net/3.2.3/keen.min.js" type="text/javascript"></script>
+    
+
+    <!-- To enable offline debugging using a local reference to Office.js, use:                        -->
+    <!--  <script src="../../Scripts/Office/MicrosoftAjax.js" type="text/javascript"></script>  -->
+    <!--  <script src="../../Scripts/Office/1.1/office.js" type="text/javascript"></script>  -->
+
+    <link href="../App.css" rel="stylesheet" type="text/css" />
+    <script src="../../Angular/app.js" type="text/javascript"></script>
+    <script src="../../Angular/Controllers/writeController.js" type="text/javascript"></script>
+    <!--<script src="../App.js" type="text/javascript"></script>-->
+
+    <link href="Home.css" rel="stylesheet" type="text/css" />
+    <!--<script src="Home.js" type="text/javascript"></script>-->
+</head>
+<body id="container">
+    <div id="content-header">
+        <div class="padding">
+            <h1>Welcome</h1>
+        </div>
+    </div>
+    <div id="content-main">
+        <div ng-controller="writeController">
+            <div class="padding">
+                <button ng-click="addImage()">Add tracking</button>
+                <span>Tracking: <span ng-bind="isTracking"></span></span>
+            </div>
+    </div>
+</body>
+</html>
