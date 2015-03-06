@@ -3,9 +3,9 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="MailApp">
   <Id>25485c00-7e86-48f0-abbb-1efa4e56bd6e</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>[Provider name]</ProviderName>
+  <ProviderName>HackTrackers</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="EmailTracker" />
+  <DisplayName DefaultValue="Email Tracker" />
   <Description DefaultValue="EmailTracker"/>
   <Hosts>
     <Host Name="Mailbox" />

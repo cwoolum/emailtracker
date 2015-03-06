@@ -7,6 +7,7 @@
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
 
+
     function hasOpened(email_id, callback) {
         var keen_client = new Keen({
             projectId: "54f7aa2b672e6c28c07fd8a5", // String (required always)
