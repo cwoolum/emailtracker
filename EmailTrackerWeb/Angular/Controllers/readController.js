@@ -38,7 +38,7 @@
         try {
             var currentEmail = Office.cast.item.toItemRead(Office.context.mailbox.item);
 
-            deferred.resolve(currentEmail.getRegExMatches().KeenId);
+            deferred.resolve(currentEmail.getRegExMatches().KeenId[0]);
         } catch (error) {
             deferred.reject(error);
         }
