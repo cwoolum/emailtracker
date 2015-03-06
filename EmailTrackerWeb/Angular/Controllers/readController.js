@@ -1,5 +1,6 @@
 ﻿angular.module('emailTracker').controller('readController', ['$scope', function ($scope) {
 
+    var body = Office.context.mailbox.item.body;
 
     function hasOpened(email_id, callback) {
         var keen_client = new Keen({
