@@ -1,5 +1,11 @@
 ﻿angular.module('emailTracker').controller('readController', ['$q', '$scope', function ($q, $scope) {
 
+    function getParameterByName(name, string) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(string);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
 
     function hasOpened(email_id, callback) {
         var keen_client = new Keen({
@@ -46,8 +52,10 @@
         return deferred.promise;
     }
 
-    getKeenIdFromEmail().then(function(keenId) {
-        hasOpened(keenId, function (result) {
+    getKeenIdFromEmail().then(function (keenId) {
+        var url = $(keenId).attr('src');
+        var obj = JSON.parse(window.atob(getParameterByName('data', url)));
+        hasOpened(obj.email_id, function (result) {
             $scope.result = result ? "opened" : "not opened";
             console.log(result);
         });

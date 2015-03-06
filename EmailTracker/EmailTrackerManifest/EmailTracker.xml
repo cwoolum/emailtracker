@@ -35,7 +35,7 @@
     <Rule xsi:type="ItemHasRegularExpressionMatch"
           PropertyName="BodyAsHTML"
           RegExName="KeenId"
-          RegExValue="data-keen-id=.([0-9-]+)" />
+          RegExValue="&lt;img\s+[^&gt;]*src=&quot;([^&quot;]*)&quot;[^&gt;]*&gt;" />
   </Rule>
   <DisableEntityHighlighting>false</DisableEntityHighlighting>
 </OfficeApp>
